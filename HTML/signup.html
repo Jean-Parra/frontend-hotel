@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es" data-lt-installed="true">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <title>Hotel UPB: Registro</title>
+</head>
+
+<body>
+    <p id="dataIdValue"></p>
+
+    <h1 id="bad"></h1>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <h1 class="hotel-title">Hotel UPD</h1>
+            </div>
+        </div>
+        <form class="form-card" id="signup-form">
+            <h2 class="form-card__subtitle">Crear una nueva cuenta</h2>
+
+            <div class="form-card__group">
+                <label class="form-card__label" for="nombres">Nombres:</label>
+                <input class="form-card__input" type="text" name="nombres" id="nombres" placeholder="Nombres">
+                <p class="form-card__error">
+                    Los nombres solo puede contener de 5 a 40 letras.
+                </p>
+            </div>
+
+            <div class="form-card__group">
+                <label class="form-card__label" for="apellildos">Apellidos:</label>
+                <input class="form-card__input" type="text" name="apellidos" id="apellidos" placeholder="Apellidos">
+                <p class="form-card__error">
+                    Los apellildos solo puede contener de 5 a 40 letras.
+                </p>
+            </div>
+
+            <div class="form-card__group">
+                <label class="form-card__label" for="correo">Correo:</label>
+                <input class="form-card__input" type="text" name="correo" id="correo" placeholder="Correo">
+                <p class="form-card__error">
+                    *El correo debe tener la forma username@domain.com
+                </p>
+            </div>
+            <div class="form-card__group">
+                <label class="form-card__label" for="cedula">Cedula:</label>
+                <input class="form-card__input" type="number" name="cedula" id="cedula" placeholder="Cedula">
+                <p class="form-card__error">
+                    *La cedula solo puede contener de 8 a 10 cifras.
+                </p>
+            </div>
+            <div class="form-card__group">
+                <label class="form-card__label" for="edad">Edad:</label>
+                <input class="form-card__input" type="number" name="edad" id="edad" placeholder="Edad">
+                <p class="form-card__error">
+                    *La edad debe ser entre los 18 a 100 años
+                </p>
+            </div>
+            <div class="form-card__group">
+                <label class="form-card__label" for="genero">Género:</label>
+                <select class="form-card__input" name="genero" id="genero">
+                  <option value="hombre">Hombre</option>
+                  <option value="mujer">Mujer</option>
+                </select>
+                <p class="form-card__error" id="genero-error">
+                    *Selecciona una opción de género
+                </p>
+            </div>
+            <div class="form-card__group">
+                <label class="form-card__label" for="contraseña">Contraseña:</label>
+                <input class="form-card__input" type="password" name="contraseña" id="contraseña" placeholder="Contraseña">
+                <p class="form-card__error">
+                    *La contraseña debe tener mínimo 8 caracteres, una letra, un número y uno de los siguientes caracteres especiales: $ ! % * # ? &amp; / %
+                </p>
+            </div>
+            <div class="form-card__group">
+                <label class="form-card__label" for="contraseña-2">Confirmación contraseña:</label>
+                <input class="form-card__input" type="password" name="contraseña-2" id="contraseña-2" placeholder="Repetir contraseña">
+                <p class="form-card__error">Ambas contraseñas deben ser iguales.</p>
+            </div>
+
+            <a href="./login.html" class="form-card__redirection">¿Ya tienes una cuenta? Inicia sesión</a>
+            <div class="cl"></div>
+
+            <div class="form-card__buttons">
+                <button class="btn btn--green btn--block" type="submit">Crear cuenta</button>
+            </div>
+
+            <p class="form-card__error" id="form-error">
+                Rellene todos los campos del formulario correctamente antes de realizar el envío.
+            </p>
+        </form>
+    </div>
+    <script src="../JAVASCRIPT/signup.js"></script>
+    <script src="../JAVASCRIPT/iteracion.js"></script>
+    <script src="../JAVASCRIPT/token.js"></script>
+
+
+
+</body>
+
+</html>

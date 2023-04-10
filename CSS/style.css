@@ -1,0 +1,201 @@
+:root {
+    /*Colors*/
+    --opaque-yellow: #f3b24a;
+    --accented-yellow: #efa229;
+    --opaque-red: #ef2947;
+    --accented-red: #e80729;
+    --opaque-blue: #74a4ec;
+    --accented-blue: #507bbb;
+    --opaque-green: #5ccb5f;
+    --accented-green: #009929;
+    --dark-green: #006414;
+    --inputs-bg: #f7f6fb;
+    --box-shadows: #e1e1e1;
+    --texts-light: #a5a5a5;
+    --texts: #4e4e4e;
+    /*Font sizes*/
+    --sm: 1rem;
+    --md: 1.2rem;
+    --lg: 1.6rem;
+}
+
+
+/*Reset styles*/
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0;
+}
+
+body {
+    font-family: Geneva, Verdana, sans-serif;
+    background-image: url(https://realestatemarket.com.mx/images/2022/02-feb/1002/nuevos-hoteles-en-mexico-ok-g.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/* Estilo del título del hotel */
+
+.hotel-title {
+    font-size: 80px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: lightblue;
+    text-align: center;
+    margin-top: 0px;
+    cursor: pointer;
+    /* Agrega un cursor de tipo puntero para indicar que es interactivo */
+}
+
+.form-card {
+    background-color: white;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+    opacity: 1;
+}
+
+
+/*Reusable classes*/
+
+.container {
+    max-width: 1400px;
+    margin: 0px auto;
+}
+
+.title {
+    font-size: var(--lg);
+    color: var(--texts);
+    text-align: center;
+    margin-block: 8px;
+}
+
+.subtitle {
+    color: var(--texts);
+}
+
+.btn {
+    cursor: pointer!important;
+    border: 1px solid transparent !important;
+    border-radius: 12px!important;
+    padding: 0.8em 1.2em!important;
+    font-size: 1rem!important;
+    font-weight: bold!important;
+    margin-block: 16px!important;
+    min-width: max-content!important;
+    text-align: center!important;
+    text-decoration: none!important;
+    font-size: var(--sm);
+    transition: all 0.3s ease!important;
+}
+
+.btn--green {
+    background-color: var(--opaque-green)!important;
+    color: white!important;
+}
+
+.btn--green:hover {
+    background-color: var(--accented-yellow)!important;
+    color: black!important;
+}
+
+.form-card {
+    width: clamp(240px, 60vw, 480px);
+    margin: 0px auto;
+    border: 1px solid var(--box-shadows);
+    padding: 16px;
+    box-shadow: 1px 4px 16px var(--box-shadows);
+}
+
+.form-card__subtitle {
+    font-size: 1.2rem;
+}
+
+.form-card__subtitle:not(:nth-child(1)) {
+    margin-block: 32px;
+}
+
+.form-card__subtitle:nth-child(1) {
+    margin-block-end: 32px;
+}
+
+.form-card__group,
+.form-group {
+    margin-block-end: 16px;
+}
+
+.form-card__error {
+    display: none;
+    color: var(--accented-red);
+    font-size: var(--sm);
+    margin-block: 8px;
+    text-align: justify;
+}
+
+.form-card__group--incorrect .form-card__error,
+.form-card__error--visible {
+    display: block;
+}
+
+.form-card__label,
+.form__label {
+    display: block;
+    margin-block: 8px;
+}
+
+.form-card__input,
+.form__input {
+    width: 100%;
+    background-color: var(--inputs-bg);
+    border: 1px solid var(--box-shadows);
+    padding: 12px 8px;
+    outline: none;
+}
+
+.form-card__input--login {
+    position: relative;
+}
+
+.form-card__input-icon {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+}
+
+.form-card__input--login input {
+    padding-left: 40px;
+}
+
+.form-card__input::placeholder {
+    color: var(--texts);
+    font-weight: bold;
+}
+
+.form-card__redirection {
+    float: right;
+    display: block;
+    margin-block: 16px;
+    color: var(--texts);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-align: justify;
+}
+
+.form-card__buttons {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.bad {
+    text-align: center;
+    width: 100%;
+    padding: 12px;
+    background-color: #a22;
+    color: #fff
+}
