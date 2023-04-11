@@ -2,8 +2,8 @@ FROM nginx:latest
 
 COPY . /usr/share/nginx/html
 
-COPY /home/frontend-hotel/cert.pem /etc/nginx/cert.pem
-COPY /home/frontend-hotel/privkey.pem /etc/nginx/privkey.pem
+COPY /home/upbcar-admin/frontend-hotel/cert.pem /etc/nginx/cert.pem
+COPY /home/upbcar-admin/frontend-hotel/privkey.pem /etc/nginx/privkey.pem
 
 RUN sed -i 's/#listen 443 ssl;/listen 443 ssl;/g' /etc/nginx/conf.d/default.conf
 RUN sed -i 's/#ssl_certificate/ssl_certificate/g' /etc/nginx/conf.d/default.conf
