@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function verificarToken() {
-    fetch('http://10.153.76.80:4000/api/usuarios/verificar', {
+    fetch('http://10.153.76.80:8080/api/usuarios/verificar', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

@@ -94,7 +94,7 @@ form.addEventListener('submit', (e) => {
                 const edad = document.getElementById('edad').value;
                 const genero = document.getElementById('genero').value;
                 const contraseña = document.getElementById('contraseña').value;
-                const response = await fetch('http://10.153.76.80:4000/api/usuarios/register', {
+                const response = await fetch('http://10.153.76.80:8080/api/usuarios/register', {
                     method: 'POST',
                     body: JSON.stringify({ nombres: nombres, apellidos: apellidos, correo: correo, cedula: cedula, edad: edad, genero: genero, contraseña: contraseña }),
                     headers: {

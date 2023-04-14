@@ -45,7 +45,7 @@ function newFunction() {
                 try {
                     const email = document.getElementById('email').value;
                     const contraseña = document.getElementById('password').value;
-                    const response = await fetch('http://10.153.76.80:4000/api/usuarios/login', {
+                    const response = await fetch('http://10.153.76.80:8080/api/usuarios/login', {
                         method: 'POST',
                         body: JSON.stringify({ correo: email, contraseña: contraseña }),
                         headers: {
