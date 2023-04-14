@@ -2,7 +2,7 @@
 FROM nginx
 
 # Copia los archivos de configuración del frontend al contenedor
-COPY /frontend-hotel /usr/share/nginx/html
+COPY /home/upbcar-admin/hotel/frontend-hotel /usr/share/nginx/html
 
 # Expone el puerto 8081 para el frontend
 EXPOSE 8081
