@@ -1,14 +1,8 @@
-FROM nginx:latest
+# Utiliza la imagen base de Nginx
+FROM nginx
 
-COPY . /usr/share/nginx/html
+# Copia los archivos de configuración del frontend al contenedor
+COPY /ruta/a/tu/codigo/frontend /usr/share/nginx/html
 
-COPY csr.pem /etc/nginx/csr.pem
-COPY privkey.pem /etc/nginx/privkey.pem
-
-RUN sed -i 's/#listen 443 ssl;/listen 443 ssl;/g' /etc/nginx/conf.d/default.conf
-RUN sed -i 's/#ssl_certificate/ssl_certificate/g' /etc/nginx/conf.d/default.conf
-RUN sed -i 's/#ssl_certificate_key/ssl_certificate_key/g' /etc/nginx/conf.d/default.conf
-
-EXPOSE 443
-
-CMD ["nginx", "-g", "daemon off;"]
+# Expone el puerto 8081 para el frontend
+EXPOSE 8081
