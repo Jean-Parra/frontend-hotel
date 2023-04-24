@@ -45,7 +45,7 @@ function newFunction() {
                 try {
                     const email = document.getElementById('email').value;
                     const contraseña = document.getElementById('password').value;
-                    const response = await fetch('http://10.153.76.80:8080/api/usuarios/login', {
+                    const response = await fetch('http://192.168.117.145:80/api/usuarios/login', {
                         method: 'POST',
                         body: JSON.stringify({ correo: email, contraseña: contraseña }),
                         headers: {
@@ -55,7 +55,9 @@ function newFunction() {
                     const data = await response.json();
                     if (response.ok) {
                         localStorage.setItem('token', data.token);
-                        window.location.href = 'home.html';
+                        window.location.reload()
+
+
                     } else {
                         const error = document.getElementById('bad');
                         error.classList.add('bad');

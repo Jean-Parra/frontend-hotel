@@ -1,6 +1,6 @@
 let paginaActual = 1;
-const limit = 4;
-let textoBusqueda = '';
+const limit = 5;
+var textoBusqueda = '';
 
 document.addEventListener('DOMContentLoaded', function() {
     obtenerUsuarios();
@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function obtenerUsuarios() {
     const textoBusquedaCodificado = encodeURIComponent(textoBusqueda); // Codificar el valor de búsqueda
-    fetch(`http://10.153.76.80:8080/api/usuarios/registrados?page=${paginaActual}&limit=${limit}&q=${textoBusquedaCodificado}`, {
+    fetch(`http://192.168.117.145:80/api/usuarios/registrados?page=${paginaActual}&limit=${limit}&q=${textoBusquedaCodificado}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -22,6 +22,8 @@ function obtenerUsuarios() {
             }
         })
         .then(data => {
+            console.log(data);
+
 
             const tablaRegistradasBody = document.getElementById('tablaRegistradasBody');
             tablaRegistradasBody.innerHTML = '';
@@ -34,12 +36,12 @@ function obtenerUsuarios() {
                 const celdaEdad = document.createElement('td');
                 const celdaGenero = document.createElement('td');
                 const celdaBorrar = document.createElement('td');
-                celdaNombre.textContent = usuario.NOMBRES;
-                celdaApellidos.textContent = usuario.APELLIDOS;
-                celdaCorreo.textContent = usuario.CORREO;
-                celdaCedula.textContent = usuario.CEDULA;
-                celdaEdad.textContent = usuario.EDAD;
-                celdaGenero.textContent = usuario.GENERO;
+                celdaNombre.textContent = usuario.nombres;
+                celdaApellidos.textContent = usuario.apellidos;
+                celdaCorreo.textContent = usuario.correo;
+                celdaCedula.textContent = usuario.cedula;
+                celdaEdad.textContent = usuario.edad;
+                celdaGenero.textContent = usuario.genero;
                 const iconoBorrar = document.createElement('i');
                 iconoBorrar.style.color = 'red';
                 iconoBorrar.style.cursor = 'pointer';
@@ -54,7 +56,7 @@ function obtenerUsuarios() {
                     const tituloModal = document.createElement('h1');
                     tituloModal.textContent = "Eliminar usuario";
                     parrafoModal = document.createElement('p');
-                    parrafoModal.textContent = `¿Estas seguro que quieres eliminar a \n${usuario.NOMBRES} ${usuario.APELLIDOS}?`;
+                    parrafoModal.textContent = `¿Estas seguro que quieres eliminar a \n${usuario.nombres} ${usuario.apellidos}?`;
                     const botonModal = document.createElement('button');
                     botonModal.classList.add('btn', 'btn-eliminar');
                     botonModal.textContent = "Eliminar";

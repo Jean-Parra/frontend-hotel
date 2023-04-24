@@ -16,8 +16,9 @@ const fields = {
     'contraseña-2': false,
     'cedula': false,
     'edad': false,
-    'genero': false,
+    'genero': false
 };
+
 
 const inputs = document.querySelectorAll('.form-card__input');
 const form = document.getElementById('signup-form');
@@ -75,7 +76,6 @@ form.addEventListener('submit', (e) => {
 
     for (key in fields) {
         if (!fields[key]) {
-            console.log(key);
             formGeneralError.classList.add('form-card__error--visible');
             flag = false;
             break;
@@ -83,6 +83,7 @@ form.addEventListener('submit', (e) => {
             formGeneralError.classList.remove('form-card__error--visible');
         }
     }
+
 
     if (flag) {
         const registro = async() => {
@@ -94,7 +95,7 @@ form.addEventListener('submit', (e) => {
                 const edad = document.getElementById('edad').value;
                 const genero = document.getElementById('genero').value;
                 const contraseña = document.getElementById('contraseña').value;
-                const response = await fetch('http://10.153.76.80:8080/api/usuarios/register', {
+                const response = await fetch('http://192.168.117.145:80/api/usuarios/register', {
                     method: 'POST',
                     body: JSON.stringify({ nombres: nombres, apellidos: apellidos, correo: correo, cedula: cedula, edad: edad, genero: genero, contraseña: contraseña }),
                     headers: {
@@ -103,7 +104,9 @@ form.addEventListener('submit', (e) => {
                 });
                 const data = await response.json();
                 if (response.ok) {
-                    window.location.href = 'login.html';
+                    localStorage.setItem('token', data.token);
+                    window.location.reload()
+
                 } else {
                     const error = document.getElementById('bad');
                     error.classList.add('bad');

@@ -5,10 +5,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../CSS/estilo.css" />
-    <link rel="stylesheet" href="../CSS/style.css" />
+    <link rel="stylesheet" href="../../CSS/estilo.css" />
+    <link rel="stylesheet" href="../../CSS/style.css" />
     <title>Hotel UPB</title>
-    <link rel="icon" href="../FOTOS/LOGO.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
     <link href="../../Backend/node_modules//bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
@@ -17,17 +16,39 @@
 
 <body>
     <nav>
-        <a href="./index.html">
-            <img src="../FOTOS/LOGO.png" alt="Hotel UPB logo" class="navigation__logo" />
+        <a href="./home.html">
+            <img src="../../FOTOS/LOGO.png" alt="Hotel UPB logo" id="navigation__logo" />
         </a>
         <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Habitaciones</a></li>
-            <li><a href="#">Reservas</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="./home.html">Inicio</a></li>
+            <li>
+                <a href="#">Habitaciones</a>
+                <ul>
+                    <li><a href="./añadirHabitaciones.html">Añadir habitaciones</a></li>
+                    <li><a href="./verHabitaciones.html">Ver habitaciones</a></li>
+
+                </ul>
+            </li>
+            <li>
+                <a href="./verUsuarios.html">Usuarios</a>
+
+            </li>
+            <li>
+                <a href="#">Huespedes</a>
+
+            </li>
+            <li>
+                <a href="#">Reservas</a>
+            </li>
+            <li><a href="#" id="cerrar-sesion" onclick="cerrarSesion()">Cerrar sesión</a></li>
+
+
+
         </ul>
     </nav>
+
     <p id="dataIdValue"></p>
+
     <section>
         <h2>Usuarios registrados</h2>
         <div id="busqueda">
@@ -61,42 +82,16 @@
     <article class="eliminarModal">
 
     </article>
-    <section>
-        <h2>Reservar habitación</h2>
-        <form>
-            <div>
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" />
-            </div>
-            <div>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" />
-            </div>
-            <div>
-                <label for="habitacion">Habitación:</label>
-                <select id="habitacion" name="habitacion">
-            <option value="individual">Individual</option>
-            <option value="doble">Doble</option>
-            <option value="familiar">Familiar</option>
-          </select>
-            </div>
-            <div>
-                <label for="fecha">Fecha de ingreso:</label>
-                <input type="datetime-local" id="fecha" name="fecha" />
-            </div>
-            <div>
-                <label for="noches">Noches:</label>
-                <input type="number" id="noches" name="noches" />
-            </div>
-            <div>
-                <input type="submit" value="Reservar" />
-            </div>
-        </form>
-    </section>
+
     <footer>
         <p>&copy; 2023 Mi hotel. Todos los derechos reservados.</p>
     </footer>
-    <script src="../JAVASCRIPT/usuariosRegistrados.js"></script>
+    <script src="../../JAVASCRIPT/token.js"></script>
+    <script src="../../JAVASCRIPT/admin/ObtenerUsuarios.js"></script>
+
+
+
+
 
 </body>
 
