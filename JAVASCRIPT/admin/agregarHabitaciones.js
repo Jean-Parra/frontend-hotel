@@ -15,7 +15,7 @@ function agregarHabitacion() {
     formData.append('capacidad_maxima', capacidad_maxima);
     formData.append('precio_persona', precio_persona);
     formData.append('imagen', imagen);
-    fetch('http://192.168.117.145/api/habitaciones/agregar', {
+    fetch('http://207.248.81.66/api/habitaciones/agregar', {
             method: 'POST',
             body: formData,
         })

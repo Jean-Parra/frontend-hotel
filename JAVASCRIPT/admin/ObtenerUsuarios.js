@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function obtenerUsuarios() {
     const textoBusquedaCodificado = encodeURIComponent(textoBusqueda); // Codificar el valor de búsqueda
-    fetch(`http://192.168.117.145:80/api/usuarios/registrados?page=${paginaActual}&limit=${limit}&q=${textoBusquedaCodificado}`, {
+    fetch(`http://207.248.81.66:80/api/usuarios/registrados?page=${paginaActual}&limit=${limit}&q=${textoBusquedaCodificado}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

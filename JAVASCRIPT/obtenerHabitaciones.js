@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function obtenerHabitaciones() {
-    fetch('http://192.168.117.145/api/habitaciones/obtenerTodas', {
+    fetch('http://207.248.81.66/api/habitaciones/obtenerTodas', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

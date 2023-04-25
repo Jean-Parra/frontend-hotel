@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 function verificarToken() {
-    fetch('http://192.168.117.145:80/api/usuarios/verificar', {
+    fetch('http://207.248.81.66:80/api/usuarios/verificar', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -41,7 +41,7 @@ function verificarToken() {
         .then(data => {
             const id = data.id;
             actualizarDataIdValue(id);
-            fetch(`http://192.168.117.145:80/api/usuarios/permiso/${id}`, {
+            fetch(`http://207.248.81.66:80/api/usuarios/permiso/${id}`, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
