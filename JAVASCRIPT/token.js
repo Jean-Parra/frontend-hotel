@@ -32,8 +32,8 @@ function verificarToken() {
             if (response.ok) {
                 return response.json();
             } else {
-                if (window.location.href != ("http://127.0.0.1:5500/HTML/login.html") && window.location.href != "http://127.0.0.1:5500/HTML/signup.html") {
-                    window.location.href = "http://127.0.0.1:5500/HTML/login.html";
+                if (window.location.href != ("http://207.248.81.66:80/HTML/login.html") && window.location.href != "http://207.248.81.66:80/HTML/signup.html") {
+                    window.location.href = "http://207.248.81.66:80/HTML/login.html";
                 }
                 throw new Error('Error en la verificación del token');
             }
@@ -56,11 +56,11 @@ function verificarToken() {
                 })
                 .then(data => {
                     console.log(data);
-                    if (window.location.href == ("http://127.0.0.1:5500/HTML/login.html") || window.location.href == "http://127.0.0.1:5500/HTML/signup.html") {
+                    if (window.location.href == ("http://207.248.81.66:80/HTML/login.html") || window.location.href == "http://207.248.81.66:80/HTML/signup.html") {
                         if (data.permiso == "usuarios") {
-                            window.location.href = "http://127.0.0.1:5500/HTML/user/home.html";
+                            window.location.href = "http://207.248.81.66:80/HTML/user/home.html";
                         } else if (data.permiso == "administrador") {
-                            window.location.href = "http://127.0.0.1:5500/HTML/admin/home.html";
+                            window.location.href = "http://207.248.81.66:80/HTML/admin/home.html";
                         }
                     }
                 })
